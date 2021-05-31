@@ -13,48 +13,103 @@ const jobsAnouncements = [
     companyName: 'FaceIt'
   },
   {
-    title: 'Junior Frontend Developer',
+    title: 'Full Stack Developer',
     coverPhoto: 'photosnap.svg',
     published: '1d ago',
-    shift: 'Full Time',
-    place: 'USA only',
-    tags: ['Frontend', 'HTML', 'CSS', 'JavaScript', 'Senior'],
+    shift: 'Part Time',
+    place: 'Remote',
+    tags: ['Midweight', 'Fullstack', 'Python', 'React'],
     featured: true,
     new: true,
     companyName: 'Photosnap'
   },
   {
-    title: 'Full Stack Developer',
-    coverPhoto: 'manage.svg',
-    published: '1d ago',
-    shift: 'Full Time',
+    title: 'Junior Frontend Developer',
+    coverPhoto: 'account.svg',
+    published: '2d ago',
+    shift: 'Part Time',
     place: 'USA only',
-    tags: ['Fullstack', 'HTML', 'Python', 'React'],
-    featured: true,
+    tags: ['Frontend', 'Junior', 'JavaScript', 'React','Sass'],
+    featured: false,
     new: true,
-    companyName: 'Manage'
+    companyName: 'Account'
   },
   {
     title: 'Junior Frontend Developer',
     coverPhoto: 'myhome.svg',
-    published: '1d ago',
-    shift: 'Full Time',
+    published: '5d ago',
+    shift: 'Contract',
     place: 'USA only',
-    tags: ['Frontend', 'HTML', 'Python', 'JavaScript', 'Senior'],
+    tags: ['Junior', 'CSS', 'JavaScript', 'JavaScript', 'Senior'],
     featured: false,
     new: false,
     companyName: 'MyHome'
   },
   {
-    title: 'Shortly Frontend Developer',
+    title: 'Software Engineer',
     coverPhoto: 'shortly.svg',
-    published: '1d ago',
+    published: '1w ago',
     shift: 'Full Time',
-    place: 'USA only',
-    tags: ['Frontend', 'HTML', 'Python', 'JavaScript', 'Senior'],
+    place: 'Worldwide',
+    tags: ['Fullstack', 'Midweight', 'JavaScript', 'Ruby', 'Sass'],
+    featured: false,
+    new: false,
+    companyName: 'Loop Studios'
+  },
+  {
+    title: 'Junior Backend Developer',
+    coverPhoto: 'faceit.svg',
+    published: '2w ago',
+    shift: 'Full Time',
+    place: 'UK only',
+    tags: ['Backend', 'Junior', 'Ruby', 'RoR'],
+    featured: false,
+    new: false,
+    companyName: 'FaceIt'
+  },
+  {
+    title: 'Junior Developer',
+    coverPhoto: 'shortly.svg',
+    published: '2w ago',
+    shift: 'Full Time',
+    place: 'Worldwide',
+    tags: ['Frontend', 'Junior', 'HTML', 'JavaScript', 'Sass'],
     featured: false,
     new: false,
     companyName: 'Shortly'
+  },
+  {
+    title: 'Junior Frontend Developer',
+    coverPhoto: 'insure.svg',
+    published: '2w ago',
+    shift: 'Full Time',
+    place: 'USA only',
+    tags: ['Frontend', 'Junior', 'HTML', 'JavaScript', 'Vue' ,'Sass'],
+    featured: false,
+    new: false,
+    companyName: 'Insure'
+  },
+  {
+    title: 'Full Stack Engineer',
+    coverPhoto: 'eyecam-co.svg',
+    published: '3w ago',
+    shift: 'Full Time',
+    place: 'Worldwide',
+    tags: ['Fullstack', 'Midweight', 'JavaScript', 'Python', 'Django'],
+    featured: false,
+    new: false,
+    companyName: 'Eyecam Co.'
+  },
+  {
+    title: 'Front-end Dev',
+    coverPhoto: 'the-air-filter-company.svg',
+    published: '1mo ago',
+    shift: 'Part Time',
+    place: 'Worldwide',
+    tags: ['Frontend', 'Junior', 'JavaScript', 'React', 'Sass'],
+    featured: false,
+    new: false,
+    companyName: 'The Air Filter Company'
   }
 ];
 
