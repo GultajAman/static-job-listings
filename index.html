@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Job Listings</title>
-</head>
-<body>
-  <nav></nav>
-  <div class="joblist__container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <!-- displays site properly based on user's device -->
 
-  </div>
-</body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="job-card">
+        <div class="job-card__cover">
+          <img src="./images/photosnap.svg" alt="" />
+        </div>
+        <div class="job-card__description">
+          <div class="job-card__description-top">
+            <span class="job-card__company-name">Photosnap</span>
+            <span class="job-card__badge job-card__badge--new">NEW!</span>
+            <span class="job-card__badge job-card__badge--featured"
+              >FEATURED</span
+            >
+          </div>
+          <p class="job-card__title">Senior Frontend Developer</p>
+          <div class="job-card__description-bottom">
+            <span class="job-card__published">Photosnap</span>
+            <span class="job-card__shift">NEW!</span>
+            <span class="job-card__location">FEATURED</span>
+          </div>
+        </div>
+        <div class="job-card__tags">
+          <span class="job-card__tag">Frontend</span>
+          <span class="job-card__tag">HTML</span>
+          <span class="job-card__tag">CSS</span>
+          <span class="job-card__tag">JavaScript</span>
+          <span class="job-card__tag">Senior</span>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
