@@ -114,6 +114,11 @@ const jobsAnouncements = [
 ];
 
 jobsAnouncements.forEach(jobsAnouncement => {
+  let tagsHTML = '';
+
+  jobsAnouncement.tags.forEach(tag => {
+    tagsHTML = tagsHTML + `<span class="job-card__tag">${tag}</span>`
+  })
   
   const cardsOfJob = `
   <div class="job-card">
@@ -123,9 +128,8 @@ jobsAnouncements.forEach(jobsAnouncement => {
         <div class="job-card__description">
           <div class="job-card__description-top">
             <span class="job-card__company-name">${jobsAnouncement.companyName}</span>
-            <span class="job-card__badge job-card__badge--new">${jobsAnouncement.new}</span>
-            <span class="job-card__badge job-card__badge--featured"
-              >${jobsAnouncement.featured}</span>
+            ${jobsAnouncement.new ? `<span class="job-card__badge job-card__badge--new">new!</span>` : ''}
+            ${jobsAnouncement.featured ? `<span class="job-card__badge job-card__badge--featured">featured</span>` : ''}
           </div>
           <p class="job-card__title">${jobsAnouncement.title}</p>
           <div class="job-card__description-bottom">
@@ -135,7 +139,7 @@ jobsAnouncements.forEach(jobsAnouncement => {
           </div>
         </div>
         <div class="job-card__tags">
-          <span class="job-card__tag">${jobsAnouncement.tags}</span>
+          ${tagsHTML}
         </div>
       </div> `
 
