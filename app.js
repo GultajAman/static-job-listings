@@ -135,11 +135,7 @@ jobsAnouncements.forEach(jobsAnouncement => {
           </div>
         </div>
         <div class="job-card__tags">
-          <span class="job-card__tag">Frontend</span>
-          <span class="job-card__tag">HTML</span>
-          <span class="job-card__tag">CSS</span>
-          <span class="job-card__tag">JavaScript</span>
-          <span class="job-card__tag">Senior</span>
+          <span class="job-card__tag">${jobsAnouncement.tags}</span>
         </div>
       </div> `
 
