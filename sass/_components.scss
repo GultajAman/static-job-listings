@@ -1,6 +1,9 @@
 .job-card {
   display: flex;
   align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
 
   &__cover {
     margin-right: 2.4rem;
