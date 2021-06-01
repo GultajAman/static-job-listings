@@ -10,7 +10,8 @@ const jobsAnouncements = [
     tags: ['Frontend', 'HTML', 'CSS', 'JavaScript', 'Senior'],
     featured: true,
     new: true,
-    companyName: 'FaceIt'
+    companyName: 'FaceIt',
+    border: true,
   },
   {
     title: 'Full Stack Developer',
@@ -21,7 +22,8 @@ const jobsAnouncements = [
     tags: ['Midweight', 'Fullstack', 'Python', 'React'],
     featured: true,
     new: true,
-    companyName: 'Photosnap'
+    companyName: 'Photosnap',
+    border: true,
   },
   {
     title: 'Junior Frontend Developer',
@@ -32,7 +34,8 @@ const jobsAnouncements = [
     tags: ['Frontend', 'Junior', 'JavaScript', 'React','Sass'],
     featured: false,
     new: true,
-    companyName: 'Account'
+    companyName: 'Account',
+    border: true,
   },
   {
     title: 'Junior Frontend Developer',
@@ -43,7 +46,8 @@ const jobsAnouncements = [
     tags: ['Junior', 'CSS', 'JavaScript', 'JavaScript', 'Senior'],
     featured: false,
     new: false,
-    companyName: 'MyHome'
+    companyName: 'MyHome',
+    border: true,
   },
   {
     title: 'Software Engineer',
@@ -54,7 +58,8 @@ const jobsAnouncements = [
     tags: ['Fullstack', 'Midweight', 'JavaScript', 'Ruby', 'Sass'],
     featured: false,
     new: false,
-    companyName: 'Loop Studios'
+    companyName: 'Loop Studios',
+    border: true,
   },
   {
     title: 'Junior Backend Developer',
@@ -65,7 +70,8 @@ const jobsAnouncements = [
     tags: ['Backend', 'Junior', 'Ruby', 'RoR'],
     featured: false,
     new: false,
-    companyName: 'FaceIt'
+    companyName: 'FaceIt',
+    border: true,
   },
   {
     title: 'Junior Developer',
@@ -76,7 +82,8 @@ const jobsAnouncements = [
     tags: ['Frontend', 'Junior', 'HTML', 'JavaScript', 'Sass'],
     featured: false,
     new: false,
-    companyName: 'Shortly'
+    companyName: 'Shortly',
+    border: true,
   },
   {
     title: 'Junior Frontend Developer',
@@ -87,7 +94,8 @@ const jobsAnouncements = [
     tags: ['Frontend', 'Junior', 'HTML', 'JavaScript', 'Vue' ,'Sass'],
     featured: false,
     new: false,
-    companyName: 'Insure'
+    companyName: 'Insure',
+    border: true,
   },
   {
     title: 'Full Stack Engineer',
@@ -98,7 +106,8 @@ const jobsAnouncements = [
     tags: ['Fullstack', 'Midweight', 'JavaScript', 'Python', 'Django'],
     featured: false,
     new: false,
-    companyName: 'Eyecam Co.'
+    companyName: 'Eyecam Co.',
+    border: true,
   },
   {
     title: 'Front-end Dev',
@@ -109,39 +118,109 @@ const jobsAnouncements = [
     tags: ['Frontend', 'Junior', 'JavaScript', 'React', 'Sass'],
     featured: false,
     new: false,
-    companyName: 'The Air Filter Company'
+    companyName: 'The Air Filter Company',
+    border: true,
   }
 ];
 
 jobsAnouncements.forEach(jobsAnouncement => {
-  let tagsHTML = '';
+  //first div container for all
+  const jobCard = document.createElement('div');
+  jobCard.classList.add('job-card');
 
-  jobsAnouncement.tags.forEach(tag => {
-    tagsHTML = tagsHTML + `<span class="job-card__tag">${tag}</span>`
-  })
+  // second div container inside the first one
+  const jobCardCover = document.createElement('div');
+  jobCardCover.classList.add('job-card__cover');
+  const jobCardCoverImg = document.createElement('img');
+  jobCardCoverImg.src =`./images/${jobsAnouncement.coverPhoto}`;
+  jobCardCover.append(jobCardCoverImg)
+
+  // third div container inside the first one
+  const jobCardDescription = document.createElement('div');
+  jobCardDescription.classList.add('job-card__description');
   
-  const cardsOfJob = `
-  <div class="job-card">
-  <div class="job-card__cover">
-          <img src="./images/${jobsAnouncement.coverPhoto}" alt="" />
-        </div>
-        <div class="job-card__description">
-          <div class="job-card__description-top">
-            <span class="job-card__company-name">${jobsAnouncement.companyName}</span>
-            ${jobsAnouncement.new ? `<span class="job-card__badge job-card__badge--new">new!</span>` : ''}
-            ${jobsAnouncement.featured ? `<span class="job-card__badge job-card__badge--featured">featured</span>` : ''}
-          </div>
-          <p class="job-card__title">${jobsAnouncement.title}</p>
-          <div class="job-card__description-bottom">
-            <span class="job-card__published">${jobsAnouncement.published}</span>
-            <span class="job-card__shift">${jobsAnouncement.shift}</span>
-            <span class="job-card__location">${jobsAnouncement.place}</span>
-          </div>
-        </div>
-        <div class="job-card__tags">
-          ${tagsHTML}
-        </div>
-      </div> `
 
-        jobsCardContainer.insertAdjacentHTML('beforeend', cardsOfJob)
+  // first div inside of third one
+  const jobCardDescriptionTop = document.createElement('div');
+  jobCardDescriptionTop.classList.add('job-card__description-top');
+  // three span
+  const jobCardCompanyName = document.createElement('span');
+  jobCardCompanyName.classList.add('job-card__company-name');
+  jobCardCompanyName.textContent = `${jobsAnouncement.companyName}`;
+  const jobCardBadgeNew = document.createElement('span');
+  jobCardBadgeNew.classList.add('job-card__badge' , 'job-card__badge--new');
+  jobCardBadgeNew.textContent = `${jobsAnouncement.new ? 'new!' : ''}`
+  const jobCardBadgeFeatured = document.createElement('span');
+  jobCardBadgeFeatured.classList.add('job-card__badge', 'job-card__badge--featured');
+  jobCardBadgeFeatured.textContent = `${jobsAnouncement.featured ? 'featured' : ''}`;
+
+  jobCardDescriptionTop.append(jobCardCompanyName,jobCardBadgeNew,jobCardBadgeFeatured)
+  // paragraph
+  const jobCardTitle = document.createElement('p');
+  jobCardTitle.classList.add('job-card__title');
+  jobCardTitle.textContent = `${jobsAnouncement.title}`;
+
+  // second div inside of third one
+  const jobCardDescriptionBottom = document.createElement('div');
+  jobCardDescriptionBottom.classList.add('job-card__description-bottom');
+  
+  // three span
+  const jobCardPublished = document.createElement('span');
+  jobCardPublished.classList.add('job-card__published');
+  jobCardPublished.textContent = `${jobsAnouncement.published}`
+  const jobCardShift = document.createElement('span');
+  jobCardShift.classList.add('job-card__shift');
+  jobCardShift.textContent = `${jobsAnouncement.shift}`;
+  const jobCardLocation = document.createElement('span');
+  jobCardLocation.classList.add('job-card__location');
+  jobCardLocation.textContent = `${jobsAnouncement.place}`;
+  jobCardDescriptionBottom.append(jobCardPublished,jobCardShift,jobCardLocation);
+
+  jobCardDescription.append(jobCardDescriptionTop,jobCardTitle,jobCardDescriptionBottom);
+
+  // fourth div container inside the first one
+  const jobCardTags = document.createElement('div');
+  jobCardTags.classList.add('job-card__tags');
+  const jobCardTagsSpan = document.createElement('span');
+  jobCardTagsSpan.classList.add('job-card__tag');
+  jobCardTagsSpan.textContent = `${jobsAnouncement.tags}`;
+
+  jobCard.append(jobCardCover,jobCardDescription,jobCardTags);
+  console.log(jobCard);
+
+  jobsCardContainer.append(jobCard);
+  console.log(jobsCardContainer);
 })
+
+// jobsAnouncements.forEach(jobsAnouncement => {
+//   let tagsHTML = '';
+
+//   jobsAnouncement.tags.forEach(tag => {
+//     tagsHTML = tagsHTML + `<span class="job-card__tag">${tag}</span>`
+//   })
+  
+//   const cardsOfJob = `
+//   <div class="job-card job-card--cyan">
+//   <div class="job-card__cover">
+//           <img src="./images/${jobsAnouncement.coverPhoto}" alt="" />
+//         </div>
+//         <div class="job-card__description">
+//           <div class="job-card__description-top">
+//             <span class="job-card__company-name">${jobsAnouncement.companyName}</span>
+//             ${jobsAnouncement.new ? `<span class="job-card__badge job-card__badge--new">new!</span>` : ''}
+//             ${jobsAnouncement.featured ? `<span class="job-card__badge job-card__badge--featured">featured</span>` : ''}
+//           </div>
+//           <p class="job-card__title">${jobsAnouncement.title}</p>
+//           <div class="job-card__description-bottom">
+//             <span class="job-card__published">${jobsAnouncement.published}</span>
+//             <span class="job-card__shift">${jobsAnouncement.shift}</span>
+//             <span class="job-card__location">${jobsAnouncement.place}</span>
+//           </div>
+//         </div>
+//         <div class="job-card__tags">
+//           ${tagsHTML}
+//         </div>
+//       </div> `
+
+//         jobsCardContainer.insertAdjacentHTML('beforeend', cardsOfJob)
+// })

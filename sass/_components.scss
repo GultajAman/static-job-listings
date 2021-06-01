@@ -4,6 +4,10 @@
   &:not(:last-child) {
     margin-bottom: 2.4rem;
   }
+  &--cyan {
+    border-left: 1px #5ca5a5 solid;
+    border-radius: 100px 0px 0px 100px;
+  }
 
   &__cover {
     margin-right: 2.4rem;
